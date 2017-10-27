@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "AESCrypt.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    NSLog(@"encrypt: %@", [AESCrypt encrypt:@"123456" password:@"123456" iv:@"0102030405060708"]);
+    NSLog(@"decrypt: %@", [AESCrypt decrypt:@"Q6qyDWrj7lIGqW3/+KSShw==" password:@"123456" iv:@"0102030405060708"]);
+    NSLog(@"encrypt11: %@", [AESCrypt encrypt:@"abc123你好" password:@"U3oR9RrryAV0qt9W"]);
+    NSLog(@"decrypt11: %@", [AESCrypt decrypt:@"ec+AU7YQ6qGAuoBc9ltSow==" password:@"U3oR9RrryAV0qt9W"]);
+    
+    
     return YES;
 }
 
